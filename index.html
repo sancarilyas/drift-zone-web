@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Drift Zone — Renk Eşleştirme Refleks Oyunu</title>
+    <meta
+      name="description"
+      content="Drift Zone, küreyi sürükleyip aynı renkteki bölgeleri topladığın hızlı bir refleks oyunudur. MacBook ve PC tarayıcısında ücretsiz oyna."
+    />
+    <meta name="theme-color" content="#03050d" />
+    <meta property="og:title" content="Drift Zone" />
+    <meta property="og:description" content="Rengine uyan bölgeleri topla. Hızlı refleks oyunu." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./icon.png" />
+    <link rel="icon" href="./favicon.png" />
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
+    <script type="module" crossorigin src="./assets/index-ClBxWCwt.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/styles-3JgRTmcV.css">
+  </head>
+  <body>
+    <main class="layout">
+      <div class="ad-slot ad-slot--top" id="adTop"></div>
+
+      <div class="stage-wrap" id="stageWrap">
+        <div class="stage" id="stage">
+          <canvas id="gameCanvas"></canvas>
+
+          <div class="hud" id="hud" hidden>
+            <div class="hud__row">
+              <div class="hud__stat">
+                <span class="hud__label">SKOR</span>
+                <span class="hud__value" id="hudScore">0</span>
+              </div>
+              <div class="hud__stat hud__stat--right">
+                <span class="hud__label">REKOR</span>
+                <span class="hud__value" id="hudBest">0</span>
+              </div>
+            </div>
+            <div class="hud__bottom">
+              <span class="hud__lives" id="hudLives">♥♥♥</span>
+              <div class="hud__color">
+                <span class="hud__dot" id="hudDot"></span>
+                <span class="hud__hint">ÇİFT TIK: RENK DEĞİŞTİR</span>
+              </div>
+            </div>
+            <div class="hud__combo" id="hudCombo" hidden>🔥 x3</div>
+          </div>
+
+          <div class="overlay" id="menuOverlay" hidden>
+            <div class="logo">⚡</div>
+            <h1 class="title">DRIFT ZONE</h1>
+            <p class="subtitle">Rengine uyan bölgeleri topla</p>
+            <ul class="instructions">
+              <li>Küreyi fareyle sürükle ya da parmağınla kaydır</li>
+              <li>Aynı renkleri topla, farklı renklerden kaç</li>
+              <li>Çift tık, çift dokun ya da Boşluk ile renk değiştir</li>
+            </ul>
+            <button class="button" id="startButton" type="button">OYUNA BAŞLA</button>
+            <div class="overlay__links">
+              <button class="link js-sound-button" id="soundButton" type="button">Ses: Açık</button>
+              <a class="link" href="./privacy.html" target="_blank" rel="noopener">Gizlilik ve çerezler</a>
+            </div>
+          </div>
+
+          <div class="overlay" id="pauseOverlay" hidden>
+            <h2 class="title">DURAKLATILDI</h2>
+            <p class="subtitle">Hazır olduğunda devam et</p>
+            <button class="button" id="resumeButton" type="button">DEVAM ET</button>
+            <button class="link js-sound-button" type="button">Ses: Açık</button>
+          </div>
+
+          <div class="overlay" id="overOverlay" hidden>
+            <h2 class="game-over">OYUN BİTTİ</h2>
+            <p class="final-score" id="finalScore">0</p>
+            <p class="subtitle" id="overSummary">En iyi: 0 • Maks. kombo: x0</p>
+            <button class="button button--rewarded" id="continueButton" type="button" hidden>
+              ▶ REKLAM İZLE, 1 CANLA DEVAM ET
+            </button>
+            <button class="button button--rewarded" id="doubleButton" type="button" hidden>
+              ▶ REKLAM İZLE, SKORU 2 KATINA ÇIKAR
+            </button>
+            <button class="button" id="restartButton" type="button">TEKRAR OYNA</button>
+            <button class="link" id="menuButton" type="button">Ana menü</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-slot ad-slot--bottom" id="adBottom"></div>
+
+      <footer class="site-footer">
+        <p>
+          Drift Zone tarayıcıda çalışan ücretsiz bir refleks oyunudur. Rekorun yalnızca cihazında
+          saklanır.
+        </p>
+        <nav>
+          <a href="./privacy.html">Gizlilik ve çerezler</a>
+          <a href="https://adssettings.google.com" target="_blank" rel="noopener">Reklam tercihleri</a>
+        </nav>
+      </footer>
+    </main>
+
+    <section class="about">
+      <h2>Drift Zone nedir?</h2>
+      <p>
+        Drift Zone, küreyi sürükleyerek aynı renkteki bölgeleri topladığın, farklı renklerden
+        kaçtığın hızlı bir refleks oyunudur. Her doğru toplama skorunu ve kombo sayacını artırır;
+        üç kez yanlış renge değdiğinde tur biter. Skorun yükseldikçe zorluk artar ve oyuna yeni
+        renkler eklenir.
+      </p>
+
+      <h2>Nasıl oynanır?</h2>
+      <ul>
+        <li>Fareyle sürükleyerek ya da parmağını kaydırarak küreyi hareket ettir.</li>
+        <li>Çift tık, çift dokunma veya Boşluk tuşuyla kürenin rengini değiştir.</li>
+        <li>Ok tuşları ile WASD tuşları da hareket için kullanılabilir; P tuşu oyunu duraklatır.</li>
+        <li>Aynı renkteki bölgeleri topla; kombo büyüdükçe her toplama daha fazla puan verir.</li>
+        <li>Tur bitince ödüllü bir reklam izleyerek 1 canla devam edebilir veya skorunu ikiye katlayabilirsin.</li>
+      </ul>
+
+      <h2>Skor ve gizlilik</h2>
+      <p>
+        En yüksek skorun yalnızca tarayıcının kendi deposunda saklanır ve hiçbir sunucuya
+        gönderilmez. Oyundaki reklamlar Google tarafından sunulur; ayrıntılar için
+        <a href="./privacy.html">gizlilik ve çerez politikasına</a> bakabilirsin.
+      </p>
+    </section>
+  </body>
+</html>
