@@ -33,8 +33,10 @@ declare global {
   }
 }
 
+const DEFAULT_ADSENSE_CLIENT = 'ca-pub-2909351126728508';
+
 export const adSettings = {
-  client: (import.meta.env.VITE_ADSENSE_CLIENT ?? '').trim(),
+  client: (import.meta.env.VITE_ADSENSE_CLIENT ?? DEFAULT_ADSENSE_CLIENT).trim(),
   slotTop: (import.meta.env.VITE_ADSENSE_SLOT_TOP ?? '').trim(),
   slotBottom: (import.meta.env.VITE_ADSENSE_SLOT_BOTTOM ?? '').trim(),
   h5Enabled: import.meta.env.VITE_H5_GAMES_ADS === 'on',
@@ -48,6 +50,10 @@ function ensureAdsScript(): Promise<void> {
   if (!adsScriptPromise) {
     adsScriptPromise = new Promise((resolve) => {
       window.adsbygoogle = window.adsbygoogle ?? [];
+      if (document.querySelector('script[src*="adsbygoogle.js"]')) {
+        resolve();
+        return;
+      }
       const script = document.createElement('script');
       script.async = true;
       script.crossOrigin = 'anonymous';

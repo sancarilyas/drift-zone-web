@@ -38,9 +38,10 @@ sadece mobil uygulama içindir. Web için gereken AdSense kimliği şu adımlarl
    AdSense kimliğinizdir. Kodda `ca-pub-...` olarak kullanılır.
 3. Aynı panelde **Reklamlar → Reklam birimleri → Reklam birimi ekleyin** ile iki adet görüntülü
    reklam birimi oluşturun. Her birimin `data-ad-slot` numarasını not edin.
-4. Bu üç değeri `.env` dosyasına yazıp `npm run build` yapın:
+4. Yayıncı kimliği (`ca-pub-2909351126728508`) koda ve `public/ads.txt` dosyasına tanımlıdır;
+   AdSense panelindeki numara buysa değiştirmek gerekmez. Reklam birimlerinin slot numaralarını
+   ortam değişkeni olarak ekleyip `npm run build` yapın:
    ```env
-   VITE_ADSENSE_CLIENT=ca-pub-SIZIN_NUMARANIZ
    VITE_ADSENSE_SLOT_TOP=ust_birim_slot_numarasi
    VITE_ADSENSE_SLOT_BOTTOM=alt_birim_slot_numarasi
    ```
