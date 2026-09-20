@@ -27,7 +27,7 @@ kimliği `ca-app-pub-...`, AdSense kimliği `ca-pub-...` biçimindedir.
 
 ## Reklamlar neden şu an görünmüyor? Kimlikleri nereden alacağım?
 
-AdMob panelindeki `ca-app-pub-2909351126728508/...` gibi kimlikler **web'de kullanılamaz**; onlar
+AdMob panelindeki `ca-app-pub-.../...` gibi kimlikler **web'de kullanılamaz**; onlar
 sadece mobil uygulama içindir. Web için gereken AdSense kimliği şu adımlarla alınır:
 
 1. https://adsense.google.com adresine, AdMob ile aynı Google hesabıyla girin ve **site adresinizi**
@@ -38,7 +38,7 @@ sadece mobil uygulama içindir. Web için gereken AdSense kimliği şu adımlarl
    AdSense kimliğinizdir. Kodda `ca-pub-...` olarak kullanılır.
 3. Aynı panelde **Reklamlar → Reklam birimleri → Reklam birimi ekleyin** ile iki adet görüntülü
    reklam birimi oluşturun. Her birimin `data-ad-slot` numarasını not edin.
-4. Yayıncı kimliği (`ca-pub-2909351126728508`) koda ve `public/ads.txt` dosyasına tanımlıdır;
+4. Yayıncı kimliği (`ca-pub-3914865159671614`) koda ve `public/ads.txt` dosyasına tanımlıdır;
    AdSense panelindeki numara buysa değiştirmek gerekmez. Reklam birimlerinin slot numaralarını
    ortam değişkeni olarak ekleyip `npm run build` yapın:
    ```env

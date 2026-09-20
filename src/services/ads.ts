@@ -33,7 +33,7 @@ declare global {
   }
 }
 
-const DEFAULT_ADSENSE_CLIENT = 'ca-pub-2909351126728508';
+const DEFAULT_ADSENSE_CLIENT = 'ca-pub-3914865159671614';
 
 export const adSettings = {
   client: (import.meta.env.VITE_ADSENSE_CLIENT ?? DEFAULT_ADSENSE_CLIENT).trim(),
