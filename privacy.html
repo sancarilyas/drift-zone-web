@@ -12,7 +12,7 @@
   <body>
     <article class="policy">
       <h1>Drift Zone Gizlilik ve Çerez Politikası</h1>
-      <p class="policy__meta">Son güncelleme: 19 Eylül 2026</p>
+      <p class="policy__meta">Son güncelleme: 25 Eylül 2026</p>
 
       <p>
         Drift Zone, hesap açmayı gerektirmeyen ücretsiz bir tarayıcı oyunudur. Bu metin, oyunu
@@ -77,9 +77,43 @@
       </p>
 
       <h2>İletişim</h2>
-      <p>Gizlilik soruları için yayıncı e-posta adresi: YAYIN ÖNCESİ DOLDURULACAK</p>
+      <p>
+        Gizlilik ve destek soruları için
+        <a href="mailto:sancarilyas@gmail.com">sancarilyas@gmail.com</a>
+        adresine yazabilir veya aşağıdaki formu kullanabilirsin.
+      </p>
+      <p class="policy__thanks" id="form-thanks" hidden>
+        Mesajın ulaştı. En kısa sürede dönüş yapacağız.
+      </p>
+      <form
+        class="support-form"
+        action="https://formsubmit.co/sancarilyas@gmail.com"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="Drift Zone destek" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://driftzoneblok.com/privacy.html?gonderildi=1" />
+        <label>
+          Adın
+          <input type="text" name="name" required maxlength="80" autocomplete="name" />
+        </label>
+        <label>
+          E-posta
+          <input type="email" name="email" required maxlength="120" autocomplete="email" />
+        </label>
+        <label>
+          Mesaj
+          <textarea name="message" required maxlength="2000" rows="5"></textarea>
+        </label>
+        <button class="button support-form__submit" type="submit">Gönder</button>
+      </form>
 
       <a class="policy__back" href="./">← Oyuna dön</a>
+      <script>
+        if (new URLSearchParams(location.search).has('gonderildi')) {
+          document.getElementById('form-thanks').hidden = false;
+        }
+      </script>
     </article>
   </body>
 </html>

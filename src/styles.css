@@ -445,6 +445,50 @@ body {
   font-weight: 700;
 }
 
+.policy__thanks {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(31, 157, 85, 0.16);
+  color: #b6f3cf;
+}
+
+.support-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.support-form label {
+  display: grid;
+  gap: 6px;
+  color: #cfe0ff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.support-form input,
+.support-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(116, 162, 255, 0.35);
+  border-radius: 12px;
+  background: rgba(8, 14, 32, 0.8);
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.support-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.support-form__submit {
+  width: fit-content;
+  min-width: 160px;
+}
+
 @media (max-height: 720px) {
   .site-footer {
     display: none;
